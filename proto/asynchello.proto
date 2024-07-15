@@ -1,0 +1,14 @@
+syntax = "proto3";
+package asynchello;
+
+service AsyncHello {
+    rpc SayHello (HelloRequest) returns (stream HelloReply);
+}
+
+message HelloRequest {
+    repeated string name = 1;
+}
+
+message HelloReply {
+    string message = 1;
+}
